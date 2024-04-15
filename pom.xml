@@ -5,10 +5,6 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>hellowworld</name>
 
-<dependencies>
-
-</dependencies>
-
 
 <build>
     <plugins>
@@ -20,7 +16,31 @@
                 <source>7</source>
                 <target>7</target>
             </configuration>
+		</plugin>
+		<plugin>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <version>2.2</version>
+            <configuration>
+                <url>http://localhost:8080/manager/text</url>
+                <server>TomcatServer</server>
+                <path>/home/raja/eclipse-workspace</path>
+            </configuration>
         </plugin>
+
+		<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.2.2</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <mainClass>com.hw.progarm.Hello</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>		
+
     </plugins>
 </build>
 
